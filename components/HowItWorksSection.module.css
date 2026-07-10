@@ -1,0 +1,342 @@
+/* HowItWorksSection.module.css — Premium Travel Redesign */
+
+/* ── Section Wrapper ────────────────────────────────── */
+.section {
+  padding: 5.5rem 0;
+  background: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Background Decorations ─────────────────────────── */
+.bgDeco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgCircle1 {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.06) 0%, transparent 70%);
+}
+
+.bgCircle2 {
+  position: absolute;
+  bottom: -80px;
+  left: -100px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 178, 16, 0.06) 0%, transparent 70%);
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 800;
+  color: #1C3A44;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  margin-top: 0.75rem;
+}
+
+.highlight {
+  color: #0096C7;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00B4D8, #FEB210);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: #5F7F8A;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ── Grid ────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Connector Line ──────────────────────────────────── */
+.connector {
+  display: none;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 1025px) {
+  .connector {
+    display: block;
+  }
+}
+
+.connectorLine {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: linear-gradient(90deg, #00B4D8 0%, #FEB210 50%, #2E7D32 100%);
+  opacity: 0.25;
+  transform: translateY(-50%);
+}
+
+.connectorDot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0096C7;
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.2);
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid #E8F4F7;
+  box-shadow: 0 4px 24px rgba(13, 92, 109, 0.07), 0 1px 4px rgba(13, 92, 109, 0.04);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s ease;
+  z-index: 2;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(13, 92, 109, 0.14), 0 6px 20px rgba(13, 92, 109, 0.08);
+  border-color: #B2EBF2;
+}
+
+/* ── Top Accent Bar ──────────────────────────────────── */
+.cardAccent {
+  height: 4px;
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 0;
+  transition: height 0.3s ease;
+}
+
+.card:hover .cardAccent {
+  height: 6px;
+}
+
+.skyAccent    { background: linear-gradient(90deg, #00B4D8, #0096C7); }
+.accentAccent { background: linear-gradient(90deg, #FEB210, #D99500); }
+.greenAccent  { background: linear-gradient(90deg, #2E7D32, #43A047); }
+
+/* ── Step Pill ───────────────────────────────────────── */
+.stepPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 1.5rem 1.5rem 0;
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+}
+
+.stepPillLabel {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stepPillNum {
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+
+.skyPill    { background: #E0F7FA; color: #0096C7; }
+.accentPill { background: #FFF8E1; color: #D99500; }
+.greenPill  { background: #E8F5E9; color: #2E7D32; }
+
+/* ── Icon Block ──────────────────────────────────────── */
+.iconBlock {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.25rem 1.5rem 0;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover .iconBlock {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Card Body ───────────────────────────────────────── */
+.cardBody {
+  padding: 1.25rem 1.5rem 2rem;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1C3A44;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.92rem;
+  color: #5F7F8A;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Perks List ──────────────────────────────────────── */
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-top: 1rem;
+  border-top: 1px solid #EEF5F7;
+}
+
+.perkItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.83rem;
+  color: #4A6572;
+  font-weight: 500;
+}
+
+.perkIcon {
+  flex-shrink: 0;
+}
+
+.skyIcon    { color: #0096C7; }
+.accentIcon { color: #D99500; }
+.greenIcon  { color: #2E7D32; }
+
+/* ── Watermark Number ────────────────────────────────── */
+.watermark {
+  position: absolute;
+  bottom: -0.5rem;
+  right: 1rem;
+  font-size: 6rem;
+  font-weight: 900;
+  font-family: 'Outfit', sans-serif;
+  color: #F0F7F9;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .watermark {
+  color: #E0F7FA;
+  transform: scale(1.05);
+}
+
+/* ── CTA Row ─────────────────────────────────────────── */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaText {
+  font-size: 1.05rem;
+  color: #5F7F8A;
+  font-weight: 500;
+}
+
+.ctaBtn {
+  padding: 0.85rem 2rem !important;
+  font-size: 0.95rem !important;
+}
+
+/* ── Dark-mode override — stays light ────────────────── */
+@media (prefers-color-scheme: dark) {
+  .section    { background: #ffffff !important; }
+  .card       { background: #ffffff; border-color: #E8F4F7; }
+  .cardTitle  { color: #1C3A44; }
+  .cardDesc   { color: #5F7F8A; }
+  .title      { color: #1C3A44; }
+  .subtitle   { color: #5F7F8A; }
+  .watermark  { color: #F0F7F9; }
+}
+
+/* ── Tablet / Mobile ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .section {
+    padding: 5rem 0 4rem;
+  }
+  .header {
+    margin-bottom: 3rem;
+  }
+  .cta {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3rem;
+  }
+}

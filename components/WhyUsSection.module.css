@@ -1,0 +1,223 @@
+/* WhyUsSection.module.css — Premium Value Proposition Split Layout */
+
+.section {
+  padding: 5.5rem 0;
+  background: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Background Elements ── */
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+/* ── Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Left Column ── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13, 92, 109, 0.06);
+  border: 1.5px solid rgba(13, 92, 109, 0.12);
+  color: #0D5C6D;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #feb210;
+}
+
+.heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: #1C3A44;
+  line-height: 1.18;
+  margin-bottom: 1.25rem;
+}
+
+.highlightText {
+  color: #0096C7;
+  position: relative;
+  display: inline-block;
+}
+
+.subtext {
+  font-size: 1.05rem;
+  color: #5F7F8A;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0096C7;
+  border-bottom: 2px solid rgba(0, 150, 199, 0.2);
+  padding-bottom: 4px;
+  transition: all 0.25s ease;
+}
+
+.ctaLink:hover {
+  color: #0077B6;
+  border-color: #0077B6;
+}
+
+.ctaIcon {
+  transition: transform 0.25s ease;
+}
+
+.ctaLink:hover .ctaIcon {
+  transform: translate(2px, -2px);
+}
+
+/* ── Right Column: 2x2 Cards Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1.5px solid #EAF3F5;
+  border-radius: 24px;
+  padding: 2.25rem 2rem 1.75rem;
+  box-shadow: 0 4px 24px rgba(13, 92, 109, 0.05);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(13, 92, 109, 0.1);
+  border-color: #CBE2E6;
+}
+
+/* ── Icon Container ── */
+.iconContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .iconContainer {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* Icon Colors & Backgrounds */
+.orangeIcon { background: #FFF3EB; color: #FF6B35; }
+.skyIcon    { background: #E0F7FA; color: #0096C7; }
+.greenIcon  { background: #E8F5E9; color: #2E7D32; }
+.purpleIcon { background: #F3E5F5; color: #8E24AA; }
+
+/* ── Title & Description ── */
+.featureTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1C3A44;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.featureDesc {
+  font-size: 0.9rem;
+  color: #5F7F8A;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+/* ── Card Footer ── */
+.cardFooter {
+  padding-top: 1rem;
+  border-top: 1px dashed #EAF3F5;
+  display: flex;
+  align-items: center;
+}
+
+.footerHighlight {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2A5566;
+  letter-spacing: 0.2px;
+}
+
+/* ── Dark Mode Compatibility — Stays Light ── */
+@media (prefers-color-scheme: dark) {
+  .section          { background: #ffffff !important; }
+  .card             { background: #ffffff; border-color: #EAF3F5; }
+  .featureTitle     { color: #1C3A44; }
+  .featureDesc      { color: #5F7F8A; }
+  .heading          { color: #1C3A44; }
+  .subtext          { color: #5F7F8A; }
+  .footerHighlight  { color: #2A5566; }
+  .cardFooter       { border-color: #EAF3F5; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 5rem 0;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}

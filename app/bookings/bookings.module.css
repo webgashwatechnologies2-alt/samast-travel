@@ -1,0 +1,203 @@
+.packagesSection { padding: 80px 0 60px; background: var(--light); }
+
+.packagesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pkgCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.pkgCard:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+
+.pkgImg {
+  position: relative;
+  height: 200px;
+}
+
+.pkgImg > span { object-fit: cover; }
+
+.pkgBadge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.pkgContent { padding: 18px; }
+
+.pkgMeta {
+  display: flex;
+  gap: 14px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.pkgMeta span { display: flex; align-items: center; gap: 4px; }
+
+.pkgName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.pkgFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fromLabel {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.pkgPrice {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.selectBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.selectBtn:hover { background: var(--accent); }
+
+/* ── Booking Form ── */
+.formSection { padding: 80px 0 100px; }
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.guarantees {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.helpBox {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 12px;
+}
+
+.helpLabel { font-size: 12.5px; color: var(--text-muted); margin-bottom: 8px; }
+
+.helpPhone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.helpPhone:hover { color: var(--accent); }
+
+/* Form */
+.formRight {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.bForm { display: flex; flex-direction: column; gap: 16px; }
+
+.bRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.bField { display: flex; flex-direction: column; gap: 6px; }
+
+.bField label { font-size: 13px; font-weight: 600; color: var(--text); }
+
+.bField input,
+.bField select,
+.bField textarea {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--light);
+  transition: var(--transition);
+  resize: vertical;
+}
+
+.bField input:focus,
+.bField select:focus,
+.bField textarea:focus {
+  border-color: var(--accent);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.08);
+}
+
+.bSubmit { width: 100%; justify-content: center; padding: 15px; font-size: 15px; margin-top: 4px; }
+
+.success {
+  text-align: center;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.success h3 { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+.success p  { color: var(--text-muted); font-size: 14px; max-width: 320px; }
+
+@media (max-width: 1024px) {
+  .packagesGrid { grid-template-columns: repeat(2, 1fr); }
+  .formGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .packagesGrid { grid-template-columns: 1fr; }
+  .bRow { grid-template-columns: 1fr; }
+  .formRight { padding: 24px 16px; }
+}

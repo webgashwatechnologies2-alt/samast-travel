@@ -1,0 +1,177 @@
+.container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events: all;
+  animation: floatIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.button {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  display: block;
+}
+
+/* Call Button Styling */
+.call {
+  background: linear-gradient(135deg, var(--sky-dark, #0096C7) 0%, var(--primary, #0D5C6D) 100%);
+}
+
+.call:hover {
+  background: linear-gradient(135deg, var(--sky, #00B4D8) 0%, var(--primary-light, #0A7A8F) 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 180, 216, 0.4);
+}
+
+/* WhatsApp Button Styling */
+.whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.whatsapp:hover {
+  background: linear-gradient(135deg, #2ae771 0%, #14a393 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.button:hover .iconWrapper {
+  transform: scale(1.1) rotate(8deg);
+}
+
+/* Tooltip/Label */
+.tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(28, 58, 68, 0.95);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.2px;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: rgba(28, 58, 68, 0.95);
+}
+
+.button:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Pulse Animation Ring */
+.pulseRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.call .pulseRing {
+  box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.5);
+  animation: callPulse 2.5s infinite;
+}
+
+.whatsapp .pulseRing {
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  animation: whatsappPulse 2.5s infinite;
+}
+
+@keyframes callPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.7);
+  }
+  70% {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 12px rgba(0, 180, 216, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 180, 216, 0);
+  }
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Adjust layout on small screens */
+@media (max-width: 768px) {
+  .container {
+    bottom: 16px;
+    right: 16px;
+    gap: 12px;
+  }
+  .button {
+    width: 48px;
+    height: 48px;
+  }
+  .tooltip {
+    display: none; /* Hide tooltips on mobile to prevent overlapping */
+  }
+}

@@ -1,0 +1,293 @@
+/* NewsletterSection.module.css — Premium Traveler Newsletter Layout */
+
+.section {
+  padding: 5.5rem 0;
+  background: #f7fbfc !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Newsletter Card Container ── */
+.newsletterCard {
+  background: linear-gradient(135deg, #103b5c 0%, #061c2e 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: 420px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(13, 92, 109, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Left Side Content Area ── */
+.contentLeft {
+  padding: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+  max-width: 550px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
+/* ── Success State ── */
+.successState {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  max-width: 500px;
+}
+
+.successIcon {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.successTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.successDesc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.resetBtn {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #feb210;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ── unified Input Form Bar ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 520px;
+}
+
+.inputBar {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 99px;
+  padding: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.inputBar:focus-within {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25), 0 0 0 3px rgba(0, 180, 216, 0.2);
+}
+
+.inputField {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  color: #1C3A44;
+  width: 100%;
+}
+
+.inputField::placeholder {
+  color: rgba(28, 58, 68, 0.45);
+}
+
+.subscribeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFC22D;
+  color: #041420;
+  border: none;
+  outline: none;
+  padding: 12px 28px;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribeBtn:hover:not(:disabled) {
+  background: #E6AE25;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 194, 45, 0.35);
+}
+
+.subscribeBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sendIcon {
+  transition: transform 0.25s ease;
+}
+
+.subscribeBtn:hover .sendIcon {
+  transform: translateX(2px) translateY(-1px);
+}
+
+/* ── Checkbox Agreement Styling ── */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.customCheckbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  background: transparent;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.checked {
+  background: #FFC22D;
+  border-color: #FFC22D;
+  box-shadow: 0 0 8px rgba(255, 194, 45, 0.4);
+}
+
+.checkboxLabel {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.checkboxContainer:hover .checkboxLabel {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.checkboxContainer:hover .customCheckbox {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Right Side Image Container ── */
+.imageRight {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.travelerImg {
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #061c2e 0%, transparent 15%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Dark Mode Compatibility — Stays Custom Colored ── */
+@media (prefers-color-scheme: dark) {
+  .section { background: #f7fbfc !important; }
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 1024px) {
+  .newsletterCard {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+  .contentLeft {
+    padding: 3.5rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .newsletterCard {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .imageRight {
+    display: none;
+  }
+  .contentLeft {
+    padding: 3.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentLeft {
+    padding: 2.5rem 1.5rem;
+  }
+  .inputBar {
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+  }
+  .inputField {
+    padding: 10px 14px;
+    text-align: center;
+  }
+  .subscribeBtn {
+    width: 100%;
+    justify-content: center;
+    border-radius: 14px;
+  }
+}

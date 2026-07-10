@@ -1,0 +1,15 @@
+:root {
+  /* Primary palette – Emerald & Gold gradient */
+  --color-primary: #2ecc71;           /* Emerald */
+  --color-primary-dark: #27ae60;
+  --color-accent: #f1c40f;            /* Gold */
+  --gradient-primary: linear-gradient(135deg, #2ecc71, #f1c40f);
+
+  /* Font and radius */
+  --font-base: 'Inter', sans-serif;
+  --radius: 0.75rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 20px rgba(0,0,0,0.15);
+}
