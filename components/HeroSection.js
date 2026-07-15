@@ -13,7 +13,7 @@ import styles from './HeroSection.module.css';
 
 const slides = [
   {
-    image: '/images/slide5.webp',
+    image: '/images/herobaner.webp',
     badge: 'Explore the Himalayas',
     title: "Life's an adventure,",
     titleAccent: 'live it!',
@@ -197,7 +197,7 @@ export default function HeroSection() {
               <label>Amount of guests</label>
               <select value={people} onChange={(e) => setPeople(e.target.value)}>
                 <option value="">Guests count</option>
-                {['1 Person', '2 People', '3-5 People', '6-10 People', '10+ People'].map((p) => (
+                {['2 People', '3-5 People', '6-10 People', '10+ People'].map((p) => (
                   <option key={p} value={p}>{p}</option>
                 ))}
               </select>

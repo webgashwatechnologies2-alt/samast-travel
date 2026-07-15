@@ -8,7 +8,6 @@ const travelStyles = [
   { id: 'adventure', icon: Mountain, label: 'Adventure', desc: 'Trek, bike & conquer' },
   { id: 'romance', icon: Heart, label: 'Romance', desc: 'Intimate escapes' },
   { id: 'family', icon: Users, label: 'Family', desc: 'Fun for all ages' },
-  { id: 'solo', icon: User, label: 'Solo', desc: 'Your own pace' },
   { id: 'leisure', icon: Palmtree, label: 'Leisure', desc: 'Relax & rejuvenate' },
 ];
 

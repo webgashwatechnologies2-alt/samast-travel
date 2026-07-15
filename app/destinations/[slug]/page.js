@@ -315,7 +315,7 @@ export default async function DestinationPage({ params }) {
                               <Activity size={14} className={styles.metaIcon} /> {p.difficulty}
                             </span>
                             <span className={styles.pkgMetaItem}>
-                              <Compass size={14} className={styles.metaIcon} /> {p.slug.includes('trek') ? 'Max Alt: 13,050ft' : `Group: ${p.groupSize}`}
+                              {p.slug.includes('trek') ? 'Max Alt: 13,050ft' : ``}
                             </span>
                           </div>
 

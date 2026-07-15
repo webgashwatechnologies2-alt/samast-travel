@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: 'What is your cancellation and refund policy?',
-    a: 'We offer flexible cancellation options. Cancellations made 30+ days before travel receive a full refund. 15–29 days: 75% refund. 7–14 days: 50% refund. Less than 7 days: no refund. Force majeure exceptions apply.',
+    a: 'If you need to cancel a confirmed booking, you must notify us in writing at info@samasttravel.com. Refund amount depends on how early you cancel: 45+ days before travel gets a 90% refund, 44–30 days gets 75%, 29–15 days gets 50%, and less than 15 days or a no-show means the full tour cost is charged with no refund. Certain bookings like flights, special permits, or peak-season hotels may be non-refundable regardless of timing. Refunds are processed within 7–10 working days via the original payment method. In case of unavoidable circumstances (natural disasters, government restrictions, etc.), we offer alternative travel dates or a credit note instead of a refund. No refund is given for early departure or unused services after the trip has started.',
   },
   {
     q: 'What is the best time to visit Spiti Valley or Ladakh?',
