@@ -18,10 +18,16 @@ import lehladakah from "@/public/images/nubra.webp";
 import ladakhnew from "@/public/images/lehladkahh.webp";
 import manalaisrinagar from "@/public/images/lehbike.webp";
 import Kedarnathimage from "@/public/images/kedarnathtemp.webp";
+import chardhamimage from "@/public/images/char-dham-yatra-package.jpg";
 import Escapeimage from "@/public/images/uknew.webp";
 import Dehradunimage from "@/public/images/haridwar.webp";
 import Uttarakhandimage from "@/public/images/nanital.webp";
+import imgTso from "@/public/images/tsomoriri-lake.jpg";
 import Nainitalimage from "@/public/images/rishuikesh.webp";
+import nubranew from "@/public/images/Nubra-Valley.jpg";
+import imgVaishnodevi from "@/public/images/vashnodeviimage.webp";
+
+import imgZanskar from "@/public/images/zanskar.webp";
 import mussoorieimage from "@/public/images/masoorie.jpg";
 import Uttarakhandimagenew from "@/public/images/uk.jpg";
 import Badrinathimage from "@/public/images/bdnew.jpg";
@@ -751,7 +757,7 @@ export const allPackages = {
       'Emergency oxygen cylinder and high-altitude medical kit in vehicle',
       'All toll taxes, parking fees, fuel charges, and driver allowances',
     ],
-     exclusions: [
+    exclusions: [
       'Tips, laundry, shopping, room service, telephone calls, etc.',
       'Travel insurance, medical expenses, or emergency costs.',
       'Paragliding, skiing, rafting, ATV rides, ropeways, or any type of activities not mentioned in inclusions.',
@@ -809,7 +815,7 @@ export const allPackages = {
       'Emergency oxygen cylinder and high-altitude medical kit in vehicle',
       'All toll taxes, parking fees, fuel charges, and driver allowances',
     ],
-     exclusions: [
+    exclusions: [
       'Tips, laundry, shopping, room service, telephone calls, etc.',
       'Travel insurance, medical expenses, or emergency costs.',
       'Paragliding, skiing, rafting, ATV rides, ropeways, or any type of activities not mentioned in inclusions.',
@@ -862,7 +868,7 @@ export const allPackages = {
       'Emergency oxygen cylinder and high-altitude medical kit in vehicle',
       'All toll taxes, parking fees, fuel charges, and driver allowances',
     ],
-     exclusions: [
+    exclusions: [
       'Tips, laundry, shopping, room service, telephone calls, etc.',
       'Travel insurance, medical expenses, or emergency costs.',
       'Paragliding, skiing, rafting, ATV rides, ropeways, or any type of activities not mentioned in inclusions.',
@@ -921,7 +927,7 @@ export const allPackages = {
       'First aid & oxygen',
       'Travel insurance',
     ],
-     exclusions: [
+    exclusions: [
       'Tips, laundry, shopping, room service, telephone calls, etc.',
       'Travel insurance, medical expenses, or emergency costs.',
       'Paragliding, skiing, rafting, ATV rides, ropeways, or any type of activities not mentioned in inclusions.',
@@ -974,7 +980,7 @@ export const allPackages = {
       'Winter gear (jacket, gloves, thermals) on loan',
       'Travel insurance',
     ],
-     exclusions: [
+    exclusions: [
       'Tips, laundry, shopping, room service, telephone calls, etc.',
       'Travel insurance, medical expenses, or emergency costs.',
       'Paragliding, skiing, rafting, ATV rides, ropeways, or any type of activities not mentioned in inclusions.',
@@ -985,13 +991,13 @@ export const allPackages = {
     ],
   },
 
-  'spiti-tour-package-from-shimla': {
-    slug: 'spiti-tour-package-from-shimla',
+  'spiti-tour-package-from-delhi': {
+    slug: 'spiti-tour-package-from-delhi',
     destination: 'spiti',
     destinationName: 'Spiti Valley',
-    name: 'Spiti Tour Package From Shimla',
-    tagline: 'Discover the untouched beauty of the Himalayas',
-    image: '/images/spiti.webp',
+    name: 'Spiti Tour Package From Delhi',
+    tagline: 'An Epic Himalayan Road Trip from Delhi to Spiti Valley',
+    image: '/images/spiti-delhinew.jpg',
     days: 6,
     nights: 5,
     price: 22999,
@@ -999,47 +1005,90 @@ export const allPackages = {
     difficulty: 'Moderate',
     rating: 4.9,
     reviews: 95,
-    bestTime: 'May–Oct',
-    transport: 'Private SUV',
+    bestTime: 'May – October',
+    transport: 'Tempo Traveller / Private SUV',
     accommodation: 'Hotels & Homestays',
     meals: 'Breakfast & Dinner',
+
     category: 'Road Trip',
     badge: 'Popular Choice',
 
     highlights: [
-      'Explore the stunning Spiti Valley',
-      'Visit Key Monastery and Dhankar Monastery',
-      'Discover Hikkim, Komic and Langza villages',
-      'Witness the majestic Chicham Bridge',
-      'Experience the beauty of Kaza town',
-      'Scenic drive through Kinnaur Valley',
-      'Traditional Himalayan villages and culture',
-      'Breathtaking mountain landscapes'
+      'Road trip from Delhi to the breathtaking Spiti Valley',
+      'Visit Key Monastery, Dhankar Monastery & Tabo Monastery',
+      'Explore Hikkim, Komic & Langza – the highest villages in the world',
+      'Witness the famous Chicham Bridge',
+      'Experience the beauty of Chandratal Lake (subject to road conditions)',
+      'Drive through the spectacular Kinnaur Valley',
+      'Enjoy local Himalayan culture and traditional villages',
+      'Comfortable hotel & homestay accommodation with meals'
     ],
+
     itinerary: [
-      { day: 1, title: 'Shimla - Chitkul', description: 'Arrive at Shimla, from where a representative will help you with the smooth transfers to Chitkul. Start off this adventurous expedition to Spiti after a short briefing about the tour, post breakfast. Hit the roads and begin your transfer from Shimla to Chitkul. Pass through the popular towns of Sarahan and Rampur Bushahr to enter the spectacular Kinnaur valley. Travel along the Sutlej river till Karcham from where you will take a right turn towards Chitkul following the Baspa river. Chitkul is the last inhabited village before the Indo-China border and here you can also visit the famous ‘Hindustan ka Akhri Dhaba’ for an amazing meal. Overnight stay and dinner at hotel/homestay in Chitkul.' },
-      { day: 2, title: 'Chitkul to Nako', description: 'After early morning breakfast, you will be leaving for Nako passing through the beautiful Kinnaur Valley.Take the Indo-Tibet Highway and pass through the Khab bridge that marks the confluence of Spiti and the Satluj River.The road will further lead you to Nako, the last hamlet of the Kinnaur district. Upon reaching Nako complete the check-in formalities and head out for some sightseeing in Nako. Head over to see the beautiful Nako Monastery, situated by the beautiful Nako Lake. Spend some time soaking in the spiritual vibes as you walk through the hallways of the monastery adorned with colorful paintings and a collection of scriptures (Kangyur) that have direct teachings of Lord Buddha. Later, sit leisurely by the Nako Lake and witness a change in shades of the lake water as the sun sets behind the mighty mountains. Return back to the hotel for an overnight stay in Nako.' },
-      { day: 3, title: 'Nako to Kaza via Kunzum Pas', description: 'Post breakfast, you will start by hitting the road from Manali towards Kaza.You will be passing through the newly inaugurated Atal Tunnel under the famous Rohtang Pass and then drive into the stunning brown-badland landscape to approach Chatru and Batal. At 14,931 feet, you will be catching your first chill at the Kunzum Pass and then descend into Losar Village, the first village in Spiti valley. Take a short stopover at Losar and enjoy a hot cup of tea and some snacks. Having warmed up with a cup of tea, you will continue driving through the stunning landscapes and reach Kaza. You will be spending the night at a comfortable hotel in Kaza.' },
-      { day: 4, title: 'Full Day Kaza Sightseeing', description: 'Enjoy a hearty breakfast before you drive to some of the highest inhabited regions of the world. First, you will be visiting the highest village in Asia, Komik, which literally translates to ‘eye of a snow cock’. You will then proceed to Hikkim for a visit to the world’s highest post office in the world and if possible, you may even meet the postmaster and hear his stories. After sending out a postcard, you will be driving to Langza, a village that is home to the ancient Lang Temple which is estimated to be around 1000 years old. You will then drive back down to Kaza for lunch.Then proceed towards the world-famous Ki Monastery nestled between the mountains in a bowl-shaped valley.You will then go farther up the valley to the picturesque village of Kibber to treasure the expanses of beautiful landscapes and immeasurable beauty of the snow-tipped mountains. Also drive to the Chicham Bridge, Asia highest suspended bridge that hangs in the air dramatically atop a 1000 feet deep gorge. From Kibber, you will drive higher up to the secluded village of Gette where you can absorb stunning aerial views of Kaza and tie a prayer flag. Later in the evening, you will drive back to Kaza to spend the night at the hotel' },
-      { day: 5, title: 'Kaza to Kalpa', description: 'After a delicious breakfast, you will be retracing your path towards Kalpa in Kinnaur Valley.On your way back take a small detour towards the left to visit the tiny hamlet of Dhankar and stop by the majestic fort monastery at Dhankar that is situated amongst the rocky spurs and is said to be 1000 years old. If time permits, do take an hour’s climb above the village to visit the stunning turquoise Dhankar Tso or Dhankar Lake to enjoy stunning views of the valley. You will then start your journey further leaving behind Spiti Valley and at Powari take a right towards ReoKong Peo, which is the main town of Kinnaur district from where you will proceed to Kalpa. Spend the night in the beautiful Kalpa village overlooking the Kinnaur Kailash mountains.Overnight stay at camp/homestay in Kalpa.' },
-      { day: 6, title: 'Kalpa to Shimla', description: 'Post breakfast at the hotel, you will head towards Shimla, known as the fruit bowl of Himachal Pradesh. Travel through the slithering roads following the Satluj and passing the rich Deodhar forests to reach Shimla. Upon reaching Shimla rest in the comfort of modern civilization, with a bag of delightful memories and exciting stories.' },
+      {
+        day: 1,
+        title: 'Delhi – Shimla',
+        description:
+          'Begin your overnight journey from Delhi to Shimla. Meet the tour representative and travel through the scenic Himalayan highways. Overnight stay in Shimla.'
+      },
+
+      {
+        day: 2,
+        title: 'Shimla – Chitkul',
+        description:
+          'After breakfast drive through Rampur, Karcham and Sangla Valley to reach Chitkul, the last inhabited village near the Indo-Tibet border. Enjoy breathtaking mountain views and stay overnight in Chitkul.'
+      },
+
+      {
+        day: 3,
+        title: 'Chitkul – Nako – Kaza',
+        description:
+          'Drive through the beautiful Kinnaur Valley, Khab Sangam and Nako Village before entering Spiti Valley. Visit Nako Lake and continue to Kaza for an overnight stay.'
+      },
+
+      {
+        day: 4,
+        title: 'Kaza Sightseeing',
+        description:
+          'Visit Key Monastery, Kibber Village, Chicham Bridge, Hikkim Post Office, Komic Village and Langza. Explore the unique culture and spectacular landscapes of Spiti before returning to Kaza.'
+      },
+
+      {
+        day: 5,
+        title: 'Kaza – Kalpa',
+        description:
+          'After breakfast visit Dhankar Monastery and Dhankar Lake (if weather permits). Continue to Kalpa via Reckong Peo while enjoying magnificent views of the Kinnaur Kailash range. Overnight stay at Kalpa.'
+      },
+
+      {
+        day: 6,
+        title: 'Kalpa – Shimla – Delhi',
+        description:
+          'After breakfast drive back to Shimla through the Sutlej Valley. Continue your journey to Delhi with unforgettable memories of the Spiti Valley adventure.'
+      }
     ],
+
     inclusions: [
-      'Pick and Drop from Shimla at time of arrival/departure',
-      'MAP Meal Plan - 5 Breakfast, 5 Dinner (Veg. Meal)',
-      'Accommodation for 2 Adults in 1 Rooms for 5 Nights.',
-      'Separate Cab For Sightseeing as per itinerary (AC will not used in hilly area).',
-      'Taxes & Expenditures Included: Parking, Toll Tax, Driver Exp.',
-      'No Hideen Charges.',
+      'Pickup & Drop from Delhi',
+      'Accommodation for 5 Nights',
+      'Daily Breakfast & Dinner',
+      'Private SUV / Tempo Traveller for the complete trip',
+      'All sightseeing as per itinerary',
+      'Driver Allowance',
+      'Fuel Charges',
+      'Parking Charges',
+      'Toll Taxes'
     ],
+
     exclusions: [
-      'Tips, laundry, shopping, room service, telephone calls, etc.',
-      'Travel insurance, medical expenses, or emergency costs.',
-      'Paragliding, skiing, rafting, ATV rides, ropeways, or any type of activities not mentioned in inclusions.',
-      'Entry fees, monument tickets, camera/video charges.',
-      'Any increase in cost due to weather conditions, roadblocks, government regulations, or unforeseen circumstances.',
-      'Heater charges extra.',
-      'Anything not mentioned in inclusions.',
+      'Airfare / Train Fare',
+      'Lunch & Personal Expenses',
+      'Travel Insurance',
+      'Entry Tickets & Camera Charges',
+      'Adventure Activities',
+      'Heater Charges (if applicable)',
+      'Expenses due to weather, road blockage or natural calamities',
+      'Anything not mentioned in inclusions'
     ],
   },
 
@@ -1213,60 +1262,97 @@ export const allPackages = {
     ],
   },
 
-  'leh-ladakh-Adventure': {
-    slug: 'leh-ladakh-Adventure',
+  'leh-ladakh-adventure': {
+    slug: 'leh-ladakh-adventure',
     destination: 'ladakh',
     destinationName: 'Ladakh',
-    name: 'Leh Ladakh Adventure with Pangong Lake',
-    tagline: 'Explore ancient Buddhist culture in Ladakh',
-    image: ladakhnew,
-    days: 5, nights: 4,
-    price: 15999, originalPrice: 19999,
-    difficulty: 'Easy',
-    rating: 4.7, reviews: 189,
-    bestTime: 'May–Oct',
-    transport: 'Private Cab',
-    accommodation: '3-Star Hotel',
+    name: 'Leh Ladakh Adventure with Nubra Valley',
+    tagline: 'Experience High Mountain Passes & Desert Landscapes',
+    image: nubranew,
+    days: 5,
+    nights: 4,
+    price: 16999,
+    originalPrice: 21999,
+    difficulty: 'Moderate',
+    rating: 4.8,
+    reviews: 214,
+    bestTime: 'May–September',
+    transport: 'Private SUV',
+    accommodation: '3-Star Hotel & Camp',
     meals: 'Breakfast & Dinner',
-    category: 'Cultural',
-    badge: 'Cultural Gem',
+    category: 'Adventure',
+    badge: 'Adventure Special',
+
     highlights: [
-      'Leh Palace (9-storey palace)',
-      'Thiksey Monastery sunrise prayer',
-      'Hemis Monastery (richest in Ladakh)',
-      'Alchi Monastery (11th century)',
-      'Lamayuru Moonland',
-      'Magnetic Hill & Sangam',
+      'Cross Khardung La Pass (18,380 ft)',
+      'Explore Nubra Valley',
+      'Camel Safari at Hunder Sand Dunes',
+      'Visit Diskit Monastery & Giant Buddha Statue',
+      'Experience Ladakhi villages & culture',
+      'Leh Palace & Shanti Stupa sightseeing',
+      'Beautiful mountain drives',
+      'Local shopping at Leh Market'
     ],
+
     itinerary: [
-      { day: 1, title: 'Arrival in Leh | Sightseeing Tour in Leh', description: 'Embrace the spirit of Ladakh as you arrive – welcome! After arriving at Leh airport, you will be transferred to your pre-booked hotel in Leh. Check in and rest for a while before embarking on a sightseeing tour of Leh. You will be visiting Leh Palace, Shanti Stupa, a peaceful Buddhist white domed stupa, and later continue your day tour with a visit to the vibrant Leh market. Afterwards, yo' },
-      { day: 2, title: 'Day Trip to Sham Valley | Exploring the Ladakhi Culture', description: 'In the morning, you will be driven to Sham Valley. Begin your exploration at the Spituk Gompa and then the Sangam Point, a beautiful confluence of the Zanskar & Indus river. Next, make a stop at the Gurudwara Pathar Sahib, & drive through the mysterious Magnetic Hills. You will also visit the SECMOL School, before heading towards the famous Hall of Fame. Afterwards, you can enjoy a White Water Rafting before returning to your hotel in Leh for an overnight stay.' },
-      { day: 3, title: 'Day Trip Across Khardung-La Pass | Driving Across the Highest All Season Motorable Pass ', description: 'After breakfast, you will embark on an exciting journey towards the world highest all season motorable pass - Khardung La Pass. Enjoy the dramatic shift in scenery amidst the mighty Himalayan peak. During your excursion, make a stop at the famous Rinchen cafe for a steaming bowl of Maggi and a refreshing chai. Later, head back to Leh for overnight stay.' },
-      { day: 4, title: 'Day Trip to Pangong Lake | En-route sightseeing from Pangong Tso to Leh', description: 'Begin your day trip to the breathtaking Pangong Tso, driving past the rugged terrains of Ladakh. After you arrive at the Pangong Tso, spend the time admiring the dreamy landscapes and the vibrant shades of the lake, changing from blue to turquoise. As you return to Leh via Chang La Pass, you will make stops at the Chang La Baba Temple, Thiksey Monastery and Druk Padma School. Afterwards, you will return to your hotel in Leh for a comfortable overnight stay.' },
-      { day: 5, title: 'Departure Day ', description: 'After checking out of your hotel, you will be transferred to Leh airport. Take one last glance at the towering peaks, bid farewell to Ladakh, and board your flight back home, marking the end of your trip.' },
-      { day: 6, title: 'Transfer to Amritsar | Departure Day ', description: 'After a relaxing morning, check out of the hotel in Dharamshala and get transferred to Sri Guru Ram Dass Jee International Airport in Amritsar for departure. This marks the end of your trip. Have a safe journey ahead!' },
-      { day: 7, title: 'Departure ', description: 'Post breakfast, check-out from the hotel and proceed for your onward journey with fond memories of Himachal Pradesh.' },
+      {
+        day: 1,
+        title: 'Arrival in Leh',
+        description:
+          'Arrive at Leh Airport and transfer to your hotel. Relax for acclimatization. In the evening visit Shanti Stupa, Leh Palace and Leh Market. Overnight stay in Leh.'
+      },
+
+      {
+        day: 2,
+        title: 'Leh – Khardung La – Nubra Valley',
+        description:
+          'Drive across the famous Khardung La Pass, one of the highest motorable roads in the world. Reach Nubra Valley and visit Diskit Monastery and the Giant Maitreya Buddha Statue. Overnight stay in Nubra.'
+      },
+
+      {
+        day: 3,
+        title: 'Nubra Valley Sightseeing',
+        description:
+          'Visit Hunder Sand Dunes and enjoy an optional double-humped Bactrian camel safari. Explore nearby Ladakhi villages and experience local culture. Overnight stay in Nubra Valley.'
+      },
+
+      {
+        day: 4,
+        title: 'Nubra Valley – Leh',
+        description:
+          'After breakfast drive back to Leh via Khardung La Pass. Enjoy free time for shopping and exploring Leh Market. Overnight stay in Leh.'
+      },
+
+      {
+        day: 5,
+        title: 'Departure from Leh',
+        description:
+          'After breakfast check out from the hotel and transfer to Leh Airport for your onward journey with unforgettable memories of Ladakh.'
+      }
     ],
+
     inclusions: [
-      '6 Nights accommodation in Leh',
-      'Daily breakfast and dinner',
-      'Airport pickup and drop',
-      'Private vehicle for all sightseeing tours',
-      'Sham Valley excursion',
+      '4 Nights accommodation',
+      'Daily Breakfast & Dinner',
+      'Airport Pickup & Drop',
+      'Private SUV for complete sightseeing',
+      'Leh & Nubra Valley sightseeing',
       'Khardung La Pass excursion',
-      'Pangong Lake day trip',
-      'Experienced driver',
-      'All toll taxes, parking charges and driver allowance',
-      'Inner Line Permits',
+      'Driver allowance',
+      'Parking & Toll Taxes',
+      'Fuel Charges',
+      'Inner Line Permits'
     ],
+
     exclusions: [
-      'Airfare to and from Ladakh.',
-      'The cab provided is strictly for sightseeing as per the itinerary and not for personal use.',
-      'Medical costs (except basic first aid) and any kind of travel insurance.',
-      'Personal expenses like tips, laundry, alcohol, bottled water, phone calls, oxygen cylinders, camera charges, etc.',
-      'Entry fees to monasteries, river rafting, or any adventure/joy rides.',
-      'Medical costs (except basic first aid) and any kind of travel insurance.',
-      'Anything not mentioned in inclusions.',
+      'Airfare',
+      'Lunch & Personal Expenses',
+      'Camel Safari Charges',
+      'Entry Fees',
+      'Travel Insurance',
+      'Adventure Activities',
+      'Medical Expenses',
+      'Anything not mentioned under inclusions'
     ],
   },
 
@@ -1333,7 +1419,7 @@ export const allPackages = {
     destinationName: 'Ladakh',
     name: 'Tso Moriri Lake Expedition',
     tagline: 'The most pristine lake in Ladakh, away from crowds',
-    image: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=85',
+    image: imgTso,
     days: 7, nights: 6,
     price: 20999, originalPrice: 26999,
     difficulty: 'Moderate',
@@ -1388,7 +1474,7 @@ export const allPackages = {
     destinationName: 'Ladakh',
     name: 'Zanskar Valley Adventure',
     tagline: 'The most remote valley in India awaits',
-    image: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=85',
+    image: imgZanskar,
     days: 12, nights: 11,
     price: 35999, originalPrice: 45999,
     difficulty: 'Very Hard',
@@ -1799,51 +1885,231 @@ export const allPackages = {
     ],
   },
 
-  // ═══════════════════════ UTTARAKHAND (10) ═══════════════════════
-  'kedarnath-group-tour': {
-    slug: 'kedarnath-group-tour',
-    destination: 'uttarakhand',
-    destinationName: 'Uttarakhand',
-    name: 'Kedarnath group tour from Haridwar with rishikesh stay',
-    tagline: 'Yoga, whitewater & Himalayan vibes',
-    image: Kedarnathimage,
-    days: 5, nights: 4,
-    price: 8999, originalPrice: 11999,
-    difficulty: 'Easy–Moderate',
-    rating: 4.8, reviews: 524,
-    bestTime: 'Mar–May & Sep–Nov',
-    transport: 'AC Cab',
-    accommodation: 'River Camp + 3-Star Hotel',
-    meals: 'All Meals',
-    category: 'Adventure',
+  'vaishno-devi-tour': {
+    slug: 'vaishno-devi-tour',
+    destination: 'kashmir',
+    destinationName: 'Kashmir',
+    name: 'Vaishno Devi & Enchanting Kashmir Tour',
+    tagline: 'Seek Divine Blessings & Explore the Paradise of Kashmir',
+    image: imgVaishnodevi,
+    days: 5,
+    nights: 4,
+    price: 19999,
+    originalPrice: 25999,
+    difficulty: 'Easy',
+    rating: 4.9,
+    reviews: 134,
+    bestTime: 'March – October',
+    transport: 'Private Cab',
+    accommodation: '3-Star Hotel + Houseboat',
+    meals: 'Breakfast & Dinner',
+    category: 'Pilgrimage & Leisure',
     badge: 'Best Seller',
+
     highlights: [
-      `Holy Kedarnath Temple darshan - sacred Jyotirlinga`,
-      `Trek through the stunning Mandakini River gorge`,
-      `River rafting and bungee jumping in Rishikesh`,
-      `Laxman Jhula and Beatles Ashram in Rishikesh`,
-      `Group trek camaraderie on the Kedarnath pilgrimage route`,
-      `Evening Ganga Aarti at Triveni Ghat, Rishikesh`,
+      'Seek blessings at the Holy Vaishno Devi Shrine',
+      'Comfortable stay in Katra & Srinagar',
+      'Scenic Shikara Ride on Dal Lake',
+      'Explore Mughal Gardens in Srinagar',
+      'Visit the famous Gulmarg hill station',
+      'Stay overnight in a traditional Kashmiri Houseboat',
+      'Private cab throughout the journey',
+      'Beautiful Himalayan landscapes'
     ],
+
     itinerary: [
-      { day: 1, title: 'Haridwar - Guptkashi ', description: 'You will be picked from Haridwar in the morning and will be taken directly to the Guptkashi.The route will be covering the Byasi, Devprayag, Srinagar, Rudraprayag, and Agastmuni hill stations on the way.Have your lunch in the midway and you will reach the destination in the evening.Check in into the hotel and enjoy the evening.Overnight stay at Guptkashi.' },
-      { day: 2, title: 'Guptkashi - Gaurikund - Kedarnath', description: 'Wake up early and get a refresh for a day.You will be embarking on the tour through the road from Guptkashi to Sonprayag which has a distance of 30 km.Sometimes this distance takes more than 03 hours to reach Sonprayag. so leaving early is a good option.Take the local conveyance for Gaurikund from sonprayag.Once done with medical and biometric registration, you can proceed to the trek.It will be a 16km trek, you will also have other options like Dolly/Ponny if you wish to skip trekking.' },
-      { day: 3, title: 'Kedarnath - Sonprayag - Guptkashi ', description: 'Do the necessary shopping for the pooja at Kedarnath temple, and can also book the special puja at an additional charge.Pack your bags and get ready to trek down to Sonprayag.From there you can board a cab and proceed your journey to Chopta.You will reach Chopta in the evening, from there you can enjoy the mesmerizing sunset and bonfireHave your dinner and overnight stay at Guptkashi.' },
-      { day: 4, title: 'Guptkashi - Rishikesh', description: 'Wake up fresh in the mountains. Post breakfast check out and continues to Rishikesh. On the way explore neighborhood market, Ram Jhula, and Laxman Jhula and various temples. Return to the hotel for over night stay.' },
-      { day: 5, title: 'End of Trip | Departure', description: 'Refuel yourself with a substantial breakfast at the inn. Post breakfast continue to Haridwar for the drop. The visit reaches at a conclusion here.' },
+      {
+        day: 1,
+        title: 'Arrival at Jammu – Katra',
+        description:
+          'Arrive at Jammu Railway Station/Airport and transfer to Katra. Check into the hotel and relax. In the evening, prepare for the sacred Vaishno Devi Yatra. Overnight stay at Katra.'
+      },
+
+      {
+        day: 2,
+        title: 'Vaishno Devi Darshan – Srinagar',
+        description:
+          'Early morning proceed for Mata Vaishno Devi Bhawan Darshan. After completing the pilgrimage, return to Katra and drive towards Srinagar. Check into the hotel for an overnight stay.'
+      },
+
+      {
+        day: 3,
+        title: 'Srinagar Sightseeing',
+        description:
+          'After breakfast visit Mughal Gardens including Nishat Bagh, Shalimar Bagh and Chashme Shahi. Enjoy a relaxing Shikara Ride on Dal Lake and explore the local markets. Overnight stay in Srinagar.'
+      },
+
+      {
+        day: 4,
+        title: 'Day Trip to Gulmarg',
+        description:
+          'Drive to Gulmarg, famous for its lush green meadows and Gondola Cable Car. Enjoy sightseeing, optional snow activities (seasonal) and breathtaking mountain views before returning to Srinagar. Overnight stay in a traditional Houseboat.'
+      },
+
+      {
+        day: 5,
+        title: 'Departure',
+        description:
+          'After breakfast check out from the houseboat and transfer to Srinagar Airport for your onward journey with unforgettable memories.'
+      }
     ],
+
     inclusions: [
-      'Accommodation for 4 nights in River Camp + 3-Star Hotel',
-      'Meals: Daily All Meals as per itinerary',
-      'All transfers & sightseeing in comfortable, private AC Cab',
-      'Guided sightseeing: Holy Kedarnath Temple darshan - sacred Jyotirlinga and Trek through the stunning Mandakini River gorge',
-      'All toll taxes, parking fees, fuel charges, and driver allowances',
+      '1 Night Hotel in Katra',
+      '2 Nights Hotel in Srinagar',
+      '1 Night Deluxe Houseboat Stay',
+      'Daily Breakfast & Dinner',
+      'Private Cab for complete tour',
+      'Shikara Ride on Dal Lake',
+      'Pickup & Drop',
+      'All Toll Tax, Parking & Driver Allowance'
     ],
+
     exclusions: [
       'Airfare / Train Fare',
-      'Personal expenses',
-      'Entry Fees for Monuments',
+      'Helicopter Tickets for Vaishno Devi',
+      'Pony, Palki & Battery Car Charges',
+      'Gondola Tickets',
+      'Lunch & Personal Expenses',
+      'Entry Fees',
       'Travel Insurance',
+      'Anything not mentioned under inclusions'
+    ],
+  },
+
+  // ═══════════════════════ UTTARAKHAND (10) ═══════════════════════
+  'chardham-yatra-tour': {
+    slug: 'chardham-yatra-tour',
+    destination: 'uttarakhand',
+    destinationName: 'Uttarakhand',
+    name: 'Chardham Yatra Tour Package',
+    tagline: 'Experience the Sacred Journey to Yamunotri, Gangotri, Kedarnath & Badrinath',
+    image: chardhamimage,
+    days: 11,
+    nights: 10,
+    price: 29999,
+    originalPrice: 35999,
+    difficulty: 'Moderate',
+    rating: 4.9,
+    reviews: 986,
+    bestTime: 'May–June & September–October',
+    transport: 'Private AC Cab',
+    accommodation: 'Deluxe Hotel',
+    meals: 'Breakfast & Dinner',
+    category: 'Religious Tour',
+    badge: 'Best Seller',
+
+    highlights: [
+      'Visit all four sacred shrines – Yamunotri, Gangotri, Kedarnath & Badrinath',
+      'Holy dip at Surya Kund and Tapt Kund',
+      'Seek blessings at Kedarnath Jyotirlinga',
+      'Visit Mana Village – India’s Last Village',
+      'Scenic drive through Devprayag, Rudraprayag, Karnaprayag & Joshimath',
+      'Attend the divine Ganga Aarti at Haridwar',
+      'Comfortable hotel stay with daily breakfast & dinner',
+      'Private AC vehicle for the entire journey',
+    ],
+
+    itinerary: [
+      {
+        day: 1,
+        title: 'Haridwar – Barkot',
+        description:
+          'Pickup from Haridwar and drive to Barkot via Mussoorie and Kempty Falls. Enjoy the scenic Himalayan route before checking into the hotel for an overnight stay.',
+      },
+
+      {
+        day: 2,
+        title: 'Barkot – Yamunotri – Barkot',
+        description:
+          'Drive to Janki Chatti and trek to Yamunotri Temple. Take a holy dip at Surya Kund and seek blessings at Yamunotri Temple before returning to Barkot.',
+      },
+
+      {
+        day: 3,
+        title: 'Barkot – Uttarkashi',
+        description:
+          'After breakfast drive to Uttarkashi. Visit the famous Kashi Vishwanath Temple and enjoy the peaceful surroundings. Overnight stay at Uttarkashi.',
+      },
+
+      {
+        day: 4,
+        title: 'Uttarkashi – Gangotri – Uttarkashi',
+        description:
+          'Early morning drive to Gangotri Temple. Offer prayers at the sacred temple and take a holy dip in the Bhagirathi River before returning to Uttarkashi.',
+      },
+
+      {
+        day: 5,
+        title: 'Uttarkashi – Guptkashi',
+        description:
+          'Drive through the beautiful Himalayan valleys via Tehri Dam and Rudraprayag before reaching Guptkashi. Overnight stay.',
+      },
+
+      {
+        day: 6,
+        title: 'Guptkashi – Kedarnath',
+        description:
+          'Drive to Sonprayag and proceed to Gaurikund. Begin the trek to Kedarnath Temple. Pony, palki and helicopter services are available at an additional cost. Overnight stay near Kedarnath.',
+      },
+
+      {
+        day: 7,
+        title: 'Kedarnath – Guptkashi',
+        description:
+          'Attend the morning darshan at Kedarnath Temple. Trek back to Gaurikund and drive to Guptkashi. Overnight stay.',
+      },
+
+      {
+        day: 8,
+        title: 'Guptkashi – Badrinath',
+        description:
+          'Drive to Badrinath via Joshimath. Visit Badrinath Temple and Tapt Kund. Attend the evening aarti and stay overnight at Badrinath.',
+      },
+
+      {
+        day: 9,
+        title: 'Badrinath – Rudraprayag',
+        description:
+          'Visit Mana Village, Vyas Gufa, Bhim Pul and Saraswati River before driving to Rudraprayag for an overnight stay.',
+      },
+
+      {
+        day: 10,
+        title: 'Rudraprayag – Haridwar',
+        description:
+          'Drive back to Haridwar via Devprayag while enjoying the beautiful confluence of rivers and Himalayan landscapes.',
+      },
+
+      {
+        day: 11,
+        title: 'Departure',
+        description:
+          'After breakfast, transfer to Haridwar Railway Station or Bus Stand with unforgettable memories of the sacred Chardham Yatra.',
+      },
+    ],
+
+    inclusions: [
+      '10 Nights accommodation in Deluxe Hotels',
+      'Daily Breakfast & Dinner',
+      'Private AC Cab for the entire tour',
+      'Pickup & Drop from Haridwar',
+      'All sightseeing as per itinerary',
+      'Driver allowance',
+      'Fuel charges',
+      'Parking charges',
+      'Toll taxes',
+      'All applicable taxes',
+    ],
+
+    exclusions: [
+      'Airfare / Train Fare',
+      'Lunch & Personal Expenses',
+      'Pony / Palki / Helicopter Charges',
+      'VIP Darshan Charges',
+      'Travel Insurance',
+      'Temple donations',
+      'Any activity not mentioned in inclusions',
     ],
   },
 
@@ -2038,7 +2304,7 @@ export const allPackages = {
     slug: 'mussoorie-rishikesh-group-tour-package',
     destination: 'uttarakhand',
     destinationName: 'Uttarakhand',
-    name: 'Mussoorie Rishikesh Group Tour Package',
+    name: 'Mussoorie Rishikesh Tour Package',
     tagline: 'Experience the skiing capital of India',
     image: mussoorieimage,
     days: 4,

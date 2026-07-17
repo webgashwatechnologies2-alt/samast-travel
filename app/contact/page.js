@@ -110,14 +110,14 @@ export default function ContactPage() {
                         <input id="name" name="name" type="text" placeholder="Your full name" value={form.name} onChange={handleChange} required />
                       </div>
                       <div className={styles.field}>
-                        <label htmlFor="email">Email Address *</label>
-                        <input id="email" name="email" type="email" placeholder="your@email.com" value={form.email} onChange={handleChange} required />
+                        <label htmlFor="email">Email Address (Optional)</label>
+                        <input id="email" name="email" type="email" placeholder="your@email.com" value={form.email} onChange={handleChange}  />
                       </div>
                     </div>
                     <div className={styles.row}>
                       <div className={styles.field}>
-                        <label htmlFor="phone">Phone Number</label>
-                        <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={handleChange} />
+                        <label htmlFor="phone">Phone Number (Compulsory)</label>
+                        <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={handleChange}  required/>
                       </div>
                       <div className={styles.field}>
                         <label htmlFor="subject">Subject *</label>
@@ -132,8 +132,8 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className={styles.field}>
-                      <label htmlFor="message">Your Message *</label>
-                      <textarea id="message" name="message" rows={5} placeholder="Tell us about your travel plans, preferred dates, budget, and anything else..." value={form.message} onChange={handleChange} required />
+                      <label htmlFor="message">Your Message (Optional)</label>
+                      <textarea id="message" name="message" rows={5} placeholder="Tell us about your travel plans, preferred dates, budget, and anything else..." value={form.message} onChange={handleChange}  />
                     </div>
                     <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
                       <Send size={16} /> Send Message
