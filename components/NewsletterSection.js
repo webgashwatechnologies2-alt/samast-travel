@@ -9,12 +9,37 @@ export default function NewsletterSection() {
   const [email, setEmail] = useState('');
   const [agree, setAgree] = useState(true);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (email && agree) {
-      setSubmitted(true);
-      setEmail('');
+      setIsSubmitting(true);
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/info@samasttravel.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            Email: email,
+            _subject: "Samast Travel - Section Newsletter Subscription",
+            _captcha: "false"
+          })
+        });
+        if (response.ok) {
+          setSubmitted(true);
+          setEmail('');
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error subscribing. Please check your internet connection.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -63,8 +88,8 @@ export default function NewsletterSection() {
                     className={styles.inputField}
                     required
                   />
-                  <button type="submit" className={styles.subscribeBtn} disabled={!agree}>
-                    <span>Subscribe</span>
+                  <button type="submit" className={styles.subscribeBtn} disabled={!agree || isSubmitting}>
+                    <span>{isSubmitting ? 'Submitting...' : 'Subscribe'}</span>
                     <Send size={15} className={styles.sendIcon} />
                   </button>
                 </div>

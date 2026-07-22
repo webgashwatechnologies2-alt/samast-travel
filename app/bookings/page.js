@@ -23,6 +23,7 @@ function BookingsContent() {
   const searchParams = useSearchParams();
   const [form, setForm] = useState({ name: '', email: '', phone: '', destination: '', date: '', people: '1', message: '' });
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const pkgSlug = searchParams.get('package');
@@ -44,7 +45,41 @@ function BookingsContent() {
   }, [searchParams]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = (e) => { e.preventDefault(); setSent(true); };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@samasttravel.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Name: form.name,
+          Email: form.email || "Not Provided",
+          "Mobile Number": form.phone,
+          Destination: form.destination,
+          "Travel Date": form.date,
+          "No. of Travellers": form.people,
+          "Special Requirements": form.message || "Not Provided",
+          _subject: "Samast Travel - Booking Enquiry",
+          _captcha: "false"
+        })
+      });
+      if (response.ok) {
+        setSent(true);
+        setForm({ name: '', email: '', phone: '', destination: '', date: '', people: '1', message: '' });
+      } else {
+        alert("Something went wrong. Please try again or contact us directly.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error sending enquiry. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -172,8 +207,8 @@ function BookingsContent() {
                       <label htmlFor="bmessage">Special Requirements</label>
                       <textarea id="bmessage" name="message" rows={4} placeholder="Any special requests, dietary needs, or questions..." value={form.message} onChange={handleChange} />
                     </div>
-                    <button type="submit" className={`btn btn-primary ${styles.bSubmit}`}>
-                      Submit Booking Enquiry <ArrowRight size={16} />
+                    <button type="submit" className={`btn btn-primary ${styles.bSubmit}`} disabled={isSubmitting}>
+                      {isSubmitting ? 'Sending...' : 'Submit Booking Enquiry'} <ArrowRight size={16} />
                     </button>
                   </form>
                 )}

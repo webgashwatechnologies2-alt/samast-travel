@@ -22,8 +22,9 @@ export default function TripPlannerSection() {
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
     if (!selectedStyle) newErrors.style = 'Please select a travel style';
@@ -33,8 +34,36 @@ export default function TripPlannerSection() {
     if (!phone) newErrors.phone = 'Please provide your phone';
 
     if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
-      setErrors({});
+      setIsSubmitting(true);
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/info@samasttravel.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            Name: name,
+            "Mobile Number": phone,
+            "Travel Style": selectedStyle,
+            "Trip Duration": selectedDuration,
+            "Budget Per Person": selectedBudget,
+            _subject: "Samast Travel - Custom Trip Plan Request",
+            _captcha: "false"
+          })
+        });
+        if (response.ok) {
+          setSubmitted(true);
+          setErrors({});
+        } else {
+          alert("Something went wrong. Please try again or contact us directly.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error submitting preferences. Please check your internet connection.");
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       setErrors(newErrors);
     }
@@ -243,8 +272,8 @@ export default function TripPlannerSection() {
                 </div>
 
                 {/* Submit Trigger */}
-                <button type="submit" className={styles.submitBtn}>
-                  <span>Get My Custom Plan</span>
+                <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                  <span>{isSubmitting ? 'Submitting...' : 'Get My Custom Plan'}</span>
                   <Send size={16} className={styles.btnIcon} />
                 </button>
               </form>

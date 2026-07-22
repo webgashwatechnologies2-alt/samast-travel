@@ -1,0 +1,256 @@
+/* =============================================
+   RESPONSIVE.CSS — Mobile-first breakpoints
+   ============================================= */
+
+/* ---- Extra small (< 576px) ---- */
+@media (max-width: 575.98px) {
+
+    /* Navbar */
+    .navbar-brand {
+        font-size: 1.25rem !important;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: 80px 0 30px;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero .p1 {
+        font-size: 0.95rem;
+    }
+
+    .para span {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
+
+    /* Hero form — stack all inputs */
+    .hero-form form {
+        padding: 16px !important;
+    }
+
+    .hero-form .row>[class*="col-"] {
+        padding: 5px 4px;
+    }
+
+    /* Package cards — full width */
+    .packages-section {
+        padding: 36px 0;
+    }
+
+    .package-card {
+        border-radius: 10px;
+    }
+
+    .pack-title {
+        font-size: 0.97rem;
+    }
+
+    .amount {
+        font-size: 1.25rem;
+    }
+
+    .inclusion-item {
+        padding: 5px 8px;
+        font-size: 0.65rem;
+    }
+
+    .pac-attractions li {
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .pack-tag {
+        font-size: 0.63rem;
+    }
+}
+
+/* ---- Small (576px – 767px) ---- */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .hero {
+        padding: 80px 0 36px;
+    }
+
+    /* 2 columns for package cards */
+    .packages-section .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .hero-form .row>[class*="col-"] {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 5px 6px;
+    }
+
+    .hero-form .col-md-2:last-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* ---- Medium (768px – 991px) ---- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .hero {
+        padding: 60px 0 40px;
+    }
+
+    /* Form: 2+2 layout */
+    .hero-form .col-md-2 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+    }
+
+    .hero-form .col-md-2:last-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 4px;
+    }
+
+    /* 2-col package grid */
+    .packages-section .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+}
+
+/* ---- Large (992px – 1199px) ---- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    /* 3-col package grid (Bootstrap default col-md-4 handles this) */
+
+    /* Hero form: all 6 items in one row */
+    .hero-form .col-md-2 {
+        flex: 0 0 16.6667%;
+        max-width: 16.6667%;
+    }
+}
+
+/* ---- XL (≥ 1200px) ---- */
+@media (min-width: 1200px) {
+
+    .hero-form .col-md-2 {
+        flex: 0 0 16.6667%;
+        max-width: 16.6667%;
+    }
+}
+
+/* =============================================
+   GENERAL RESPONSIVE HELPERS (all widths)
+   ============================================= */
+
+/* Ensure the hero form row wraps nicely */
+.hero-form .row {
+    flex-wrap: wrap;
+}
+
+/* Cards always fill their column height */
+.packages-section .row {
+    align-items: stretch;
+}
+
+.packages-section .col-md-4 {
+    display: flex;
+}
+
+.packages-section .col-md-4 .package-card {
+    width: 100%;
+}
+
+/* Prevent horizontal scroll from form on narrow screens */
+.hero-form {
+    overflow: hidden;
+}
+
+/* Package tags wrap on narrow images */
+.package-tags {
+    flex-wrap: wrap;
+}
+
+/*===== footer =====*/
+
+@media(max-width:992px) {
+
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .payment-img {
+        height: 32px;
+    }
+
+    .payment-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .call {
+        width: 35px;
+        height: 35px;
+        bottom: 8rem;
+    }
+
+    .whatsapp {
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .footer {
+        padding: 60px 0 20px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-column {
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+        padding-bottom: 25px;
+    }
+
+    .footer-column:last-child {
+        border: none;
+        padding-bottom: 0;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .footer-column h3 {
+        font-size: 24px;
+    }
+
+    .footer-column h4 {
+        font-size: 17px;
+    }
+
+    .footer-bottom {
+        font-size: 14px;
+    }
+
+}

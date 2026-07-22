@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="himachal Tour Booking" name="description"/>
+<meta content="Samast Travel" name="author"/>
+<title>Himachal Tour Packages</title>
+<link href="favicon.png" rel="favicon"/>
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/slick.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="css/slick-theme.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="css/slicknav.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<style>
+    /* --- Top Bar CSS --- */
+    .top-bar-custom {
+        background: #F9C855;
+        color: #000;
+        padding: 10px 0;
+        font-size: 14px;
+        position: relative;
+        z-index: 1001;
+        font-weight: 600;
+    }
+    .top-bar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .top-bar-contact {
+        display: flex;
+        gap: 20px;
+    }
+    .top-bar-contact a {
+        color: #000 !important;
+        text-decoration: none;
+        font-weight: 600;
+        transition: opacity 0.3s ease;
+    }
+    .top-bar-contact i {
+        margin-right: 5px;
+        color: #000;
+    }
+    .top-bar-timer {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: 600;
+    }
+    .top-bar-timer .timer-label {
+        background: #000;
+        color: #F9C855;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        animation: flash 2s infinite;
+    }
+    @keyframes flash {
+        0% { opacity: 1; }
+        50% { opacity: 0.7; }
+        100% { opacity: 1; }
+    }
+    .timer-box {
+        background: #fff;
+        color: #000;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-weight: 800;
+        min-width: 32px;
+        text-align: center;
+        display: inline-block;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 768px) {
+        .top-bar-content {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .top-bar-contact {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+
+    /* Dynamic Header Styling */
+    #header {
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 0px 0;
+    }
+
+    #header .navbar-nav .nav-link {
+        color: #333333 !important;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 10px 15px;
+        transition: all 0.3s ease;
+    }
+
+    #header .navbar-nav .nav-link:hover {
+        color: #F9C855 !important; 
+    }
+    .header-icon {
+        font-size: 18px !important;
+        color: #F9C855;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
+    @media (max-width: 991px) {
+        .navbar-brand.logo {
+            display: none !important;
+        }
+        .navbar-brand.logo-m {
+            display: block !important;
+            max-width: 150px;
+        }
+        .navbar-brand.logo-m img {
+            width: 100%;
+            height: auto;
+        }
+        
+        #header .navbar-collapse {
+            background-color: #ffffff;
+            padding: 15px;
+            border-top: 1px solid #eee;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+    }
+    @media (min-width: 992px) {
+        .navbar-brand.logo-m {
+            display: none !important;
+        }
+        .navbar-brand.logo img {
+            max-width: 110px;
+        }
+    }
+
+    /* Override buttons theme color */
+    .btn-enq, a.btn-detail, button.btn-detail, .requirement, .get-free, .btn-custom {
+        background: #F9C855 !important;
+        border: none !important;
+        color: #222 !important;
+        font-weight: 700 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    }
+    .btn-enq:hover, a.btn-detail:hover, button.btn-detail:hover, .requirement:hover, .btn-custom:hover {
+        background: #e5b443 !important;
+        color: #222 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    }
+    .blinking {
+        color: #F9C855 !important;
+    }
+
+    /* Clean Cards Design - Reference Match */
+    .packages {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 30px;
+        border: none !important;
+        overflow: hidden;
+        position: relative;
+    }
+    .packages:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    }
+    .pkg-img {
+        position: relative;
+    }
+    .pkg-img img.yee {
+        border-radius: 15px 15px 0 0 !important;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+    .discount-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #ff4d4d;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 20px;
+        z-index: 2;
+    }
+    .pkg-content {
+        padding: 20px;
+    }
+    .pkg-content h2 {
+        font-size: 18px !important;
+        font-weight: 800;
+        color: #2a3143 !important; 
+        margin: 0 0 15px !important;
+        text-align: left !important;
+        line-height: 1.3 !important;
+    }
+    .pkg-inc {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .pkg-inc li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        color: #555;
+        line-height: 1.4;
+    }
+    .pkg-inc li i {
+        color: #03a84e; /* Light green checkmark like reference */
+        font-size: 16px;
+        margin-top: 3px;
+    }
+    .pkg-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        border-top: 1px solid #eee;
+        background: #fdfdfd;
+    }
+    .pkg-price {
+        display: flex;
+        flex-direction: column;
+    }
+    .starting-from {
+        font-size: 11px;
+        color: #888;
+    }
+    .price-val {
+        font-size: 20px;
+        font-weight: 800;
+        color: #03a84e; /* Green Price */
+    }
+    a.btn-detail, button.btn-detail {
+        background: #f9c855 !important;
+        color: #222 !important;
+        border-radius: 25px !important;
+        font-weight: 700 !important;
+        padding: 8px 18px !important;
+        text-transform: capitalize;
+        font-size: 13px !important;
+        box-shadow: 0 4px 10px rgba(249, 200, 85, 0.3) !important;
+        margin: 0 !important;
+        border: none !important;
+    }
+    a.btn-detail:hover, button.btn-detail:hover {
+        background: #e5b443 !important;
+        transform: translateY(-2px);
+    }
+
+    /* Form Design - Reference Match */
+    .free-quotes {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .free-quotes h3 {
+        font-size: 24px;
+        font-weight: 800;
+        color: #222;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    .free-quotes p {
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-control {
+        background: #fdfdfd;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 12px 15px;
+        font-size: 14px;
+        box-shadow: none !important;
+    }
+    .form-control:focus {
+        border-color: #F9C855;
+        background: #fff;
+    }
+    .btn-enq {
+        width: 100%;
+        background: #f9c855 !important;
+        color: #222 !important;
+        font-weight: 700;
+        border-radius: 8px !important;
+        padding: 12px;
+        font-size: 16px;
+        box-shadow: 0 4px 10px rgba(249, 200, 85, 0.3) !important;
+    }
+    .btn-enq:hover {
+        background: #e5b443 !important;
+        transform: translateY(-2px);
+    }
+    
+    .whatsapp {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        bottom: 100px;
+        line-height: 40px;
+        cursor: pointer;
+        display: block;
+        z-index: 2;
+        right: 13px;
+    }
+
+    .phone {
+        border-radius: 50%;
+        height: 118px;
+        width: 60px;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        bottom: 100px;
+        line-height: 40px;
+        cursor: pointer;
+        display: block;
+        z-index: 2;
+    }
+    @media only screen and (max-width:992px) {
+        .phone {
+            display: none;
+        }
+        .whatsapp {
+            display: none;
+        }
+    }
+
+    /* Reviews Section CSS */
+    .reviews-section {
+        background: linear-gradient(180deg, #f9f9f9 0%, #fff 100%);
+        padding: 60px 0;
+    }
+    .review-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        margin-bottom: 30px;
+        border-bottom: 4px solid #F9C855;
+        transition: transform 0.3s ease;
+        height: 100%;
+    }
+    .review-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    .reviewer-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .reviewer-img {
+        width: 60px;
+        height: 60px;
+        background: #F9C855;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-weight: 800;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    .reviewer-name h4 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #222;
+    }
+    .reviewer-name p {
+        margin: 0;
+        font-size: 13px;
+        color: #777;
+    }
+    .stars {
+        color: #F9C855;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    .review-text {
+        font-size: 15px;
+        color: #555;
+        font-style: italic;
+        line-height: 1.6;
+    }
+    .section-title-custom {
+        margin-bottom: 50px;
+    }
+    .section-title-custom h2 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #222;
+    }
+    .section-title-custom .rating-badge {
+        background: #F9C855;
+        color: #222;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 16px;
+        display: inline-block;
+        margin-top: 10px;
+        font-weight: 700;
+    }
+    </style> <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KNGCJJMN');</script>
+<!-- End Google Tag Manager -->
+ </head>
+ <body>
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNGCJJMN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<style>
+        .whatsapp {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 100px;
+            line-height: 40px;
+            cursor: pointer;
+            display: block;
+            z-index: 2;
+            right: 13px;
+        }
+
+        .phone {
+            border-radius: 50%;
+            height: 118px;
+            width: 60px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 100px;
+            line-height: 40px;
+            cursor: pointer;
+            display: block;
+            z-index: 2;
+        }
+
+        .head-cnt ul li a {
+            color: black;
+
+        }
+
+        .head-cnt img {
+            width: 40px;
+        }
+
+        .price a {
+            font-size: 15px;
+            color: black;
+            font-weight: 600;
+        }
+
+        span.j {
+            padding-left: 30px;
+        }
+
+        #banner {
+            position: relative;
+            /* background: radial-gradient(at 50% -20%, #0070A1, #16113B) fixed; */
+            background-image: url(./images/ban.jpg);
+            WIDTH: 100%;
+            height: 700PX;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .img-fluide {
+            width: 30px;
+        }
+
+        @media only screen and (max-width:992px) {
+            .blinking {
+                font-family: "Mulish", Sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: #f57f6a;
+                animation: blink 1s infinite;
+            }
+
+            .phone {
+                display: none;
+            }
+
+            .whatsapp {
+                display: none;
+            }
+
+            li.list1 {
+                color: white;
+                margin-bottom: 21px;
+                font-size: 17px;
+            }
+
+            .img-fluide {
+                width: 30px;
+            }
+        }
+
+        .text-center1 {
+            text-align: center;
+        }
+
+        img.img-fluid1 {
+            width: 100%;
+            height: 255px;
+        }
+
+        .banner-warp {
+            background: #00000091;
+            width: 100%;
+            height: 700px;
+        }
+
+        .rotating {
+        -webkit-animation: rotating 15s linear infinite;
+        }
+
+        .best-price-2 {
+            position: fixed;
+            left: 73px;
+            top: 700px;
+            z-index: 99;
+            opacity: 3.5;
+            transform: rotate(-25deg) !important;
+        }
+
+        .img-flui {
+            max-width: 100%;
+            height: auto;
+            /* background-color: white; */
+            border-radius: 10px;
+            padding: 7px;
+        }
+
+        .ctm-nh {
+            align-content: center !important;
+            margin-top: 13px;
+            height: 10px;
+        }
+
+        @media (max-width: 991px) {
+            .logo-m img {
+                width: 100%;
+                max-width: 85px !important;
+            }
+
+            .ab {
+                color: #ff6f49;
+                font-size: 8px !important;
+            }
+
+            .ctm-nh h4 {
+                font-size: 11px !important;
+                margin-left: 0px !important;
+
+            }
+
+            .head-cnt ul {
+                padding: 0px;
+                list-style-type: none;
+                display: grid;
+                text-align: right;
+                margin-top: -50px;
+            }
+
+            .head-cnt ul li a {
+                font-size: 11px !important;
+            }
+
+            .head-cnt ul li i img {
+                width: 19px !important;
+            }
+
+            .best-price-2 {
+                display: none !important;
+            }
+        }
+
+        .ab {
+            color: #ff6f49;
+            font-size: 12px;
+        }
+
+
+
+
+
+        .ctm-nh h4 {
+            margin: 0;
+            color: #028a37;
+            margin-left: 15px;
+            font-size: 16px;
+            margin-top: -13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        /* Mobile View Fixes */
+        @media (max-width: 991px) {
+            #banner {
+                height: auto !important;
+                padding-bottom: 50px !important;
+                background-position: center !important;
+            }
+            .banner-warp {
+                height: auto !important;
+                padding-bottom: 50px !important;
+            }
+            .free-quotes {
+                margin-top: 40px !important;
+                margin-bottom: 20px !important;
+            }
+        }
+        
+        .form-control {
+            height: auto !important;
+        }
+    </style>
+<div class="phone">
+<a href="tel:+91 86796 77152 " target="_blank"><img src="images/cel.png" style="width:54px;"/></a>
+</div>
+<div class="whatsapp">
+<a href="https://api.whatsapp.com/send?phone=+91 86796 77152 &amp;text=Hello%20 Samast Travel,%20I%20Want%20to%20book%20a%20package.%20My%20requirements%20are%20as%20follows:-" target="_blank"><img src="./whatsapp.png"/></a>
+</div>
+<!-- Top Bar Added -->
+<div class="top-bar-custom d-none d-lg-block">
+<div class="container">
+<div class="top-bar-content">
+<div class="top-bar-contact">
+<a href="tel:+91 86796 77152"><i class="fa fa-phone"></i> +91 86796 77152</a>
+<a href="mailto:info@samasttravel.com"><i class="fa fa-envelope"></i> info@samasttravel.com</a>
+</div>
+<div class="top-bar-timer d-none d-md-flex">
+<span class="timer-label">Follow Us</span>
+<div class="social-icons" style="display:flex; gap:15px; margin-left:10px;">
+<a href="#" style="color:#000;"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#" style="color:#000;"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile top bar simplified version -->
+<div class="top-bar-custom d-block d-lg-none">
+<div class="container">
+<div class="top-bar-content flex-row justify-content-between align-items-center">
+<div class="top-bar-contact w-100 d-flex justify-content-between" style="font-size: 13px;">
+<a href="tel:+91 86796 77152"><i class="fa fa-phone"></i> +91 86796 77152</a>
+<a href="mailto:info@samasttravel.com"><i class="fa fa-envelope"></i> Email Us</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Header Navbar -->
+<section id="header">
+<nav class="navbar navbar-expand-lg navbar-light">
+<div class="container">
+<a class="navbar-brand logo-m" href="index.html">
+<img alt="Logo" class="img-fluid" src="./images/himalayan-tour-logo.jpg" style="height:45px;"/>
+</a>
+<a class="navbar-brand logo" href="index.html">
+<img alt="Logo" class="img-fluid" src="./images/himalayan-tour-logo.jpg" style=""/>
+</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" style="border-color: transparent;" type="button">
+<i class="fa fa-bars" style="color: #F9C855; font-size: 26px;"></i>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto align-items-center">
+<li class="nav-item">
+<a class="nav-link" href="#banner">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#top-packages">Packages</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#book-online">About Us</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#footer">Contact</a>
+</li>
+<li class="nav-item" style="margin-left: 10px;">
+<a class="btn btn-detail" href="#top-packages" style="border-radius: 25px; padding: 10px 20px;">
+                                    Get Quote
+                                </a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</section>
+
+
+<!-- about company -->
+
+<style>
+        .over {
+            background: #0000006b;
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+
+<style>
+        .section {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            position: relative;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .vertical-content {
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            -webkit-flex-direction: row;
+        }
+
+        @media (min-width: 992px) {
+            .col-lg-6 {
+                flex: 0 0 auto;
+                width: 50%;
+            }
+        }
+
+        .btn-custom {
+            background: #1191c8;
+        }
+
+        a.btn.btn-custom.btn-rounded.mt-3.mb-4 {
+            COLOR: WHITE;
+        }
+
+        img.img-fluid.mx-auto.d-block {
+            BORDER-RADIUS: 21PX;
+        }
+
+        .video-intro h2 {
+            TEXT-SHADOW: 1PX 0PX 1PX #0e0a04;
+        }
+    </style>
+<!-- Client Reviews Section -->
+
+
+<style>
+        .thank-you-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        .thank-you-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 5px solid #F9C855;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .success-icon {
+            width: 90px;
+            height: 90px;
+            background: #eafff0;
+            color: #03a84e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 15px rgba(3, 168, 78, 0.15);
+        }
+        .thank-you-card h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 15px;
+        }
+        .thank-you-card p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .contact-info-box {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .contact-info-box a {
+            color: #222;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info-box a:hover {
+            color: #F9C855;
+        }
+        .btn-back-home {
+            background: #F9C855;
+            color: #222 !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(249, 200, 85, 0.3);
+        }
+        .btn-back-home:hover {
+            background: #e5b443;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(249, 200, 85, 0.4);
+        }
+    </style>
+<section class="thank-you-section">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="thank-you-card">
+<div class="success-icon">
+<i class="fa fa-check"></i>
+</div>
+<h1>Thank You!</h1>
+<p>We have received your request successfully. Our travel experts will get back to you shortly with the best package options.</p>
+<div class="contact-info-box">
+<p style="margin-bottom: 5px;">For immediate assistance, please contact us:</p>
+<a href="tel:+91 86796 77152"><i class="fa fa-phone"></i> +91 86796 77152</a>   |   
+                            <a href="mailto:info@samasttravel.com"><i class="fa fa-envelope"></i> info@samasttravel.com</a>
+</div>
+<a class="btn-back-home" href="index.html">
+<i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Back to Home
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<ul class="ftr-link">
+<li>SHIMLA</li>
+<li>MANALI</li>
+<li>Kullu</li>
+<li>Khajjiar</li>
+<li>Dharamshala</li>
+<li>DALHOUSIE</li>
+</ul></div>
+</div>
+<div class="row">
+<div class="col-md-4 hidden-md">
+<h4 class="ftr-h4">Guarantee</h4>
+<figure>
+<img alt="" class="img-fluid" src="images/trust.png"/>
+</figure>
+</div>
+<div class="col-md-3">
+<h4 class="ftr-h4">Approved By</h4>
+<div class="approved">
+<img alt="" class="img-fluid" src="images/logos.png"/>
+</div>
+</div>
+<div class="col-md-5">
+<h4 class="ftr-h4">We Accept All Major Credit And Debit Cards</h4>
+<div class="approved">
+<img alt="" class="img-fluid" src="images/payment.png"/>
+<h5 class="ftr-h5">Customer Support : </h5>
+<ul class="ftr-cnt">
+<li><i><img alt="" class="img-fluide" src="./images/orangee.jpg.png"/> </i> <a href="tel: +91 86796 77152   "> +91 86796 77152 </a></li>
+<li><i><img alt="" class="img-fluide" src="./images/maillorange.png"/> </i>
+<a href="mailto:info@samasttravel.com">info@samasttravel.com </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="copywrite">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 text-center1">
+<p>© Copyright 2026 Samast Travel. All Rights Reserved. <a href="https://gashwatechnologies.com/"><img src="./images/footer.gif" style="width: 12%;"/></a></p>
+</div>
+</div>
+</div>
+</section>
+<div class="section_mobile">
+<div class="inner_mobile">
+<div class="container">
+<div class="row">
+<div class="col-md-3 p-0 col-3 dd">
+<div class="_col_m">
+<a class="_btn_bm" href="tel: +91 86796 77152 " style="color:white;"><i class="fa fa-phone fa-1x" style="margin-left:10px!important;"></i></a>
+</div>
+</div>
+<div class="col-md-9 p-0 sa">
+<div class="_col_bm">
+<button class="_btn_bm" data-target="#exampleModal" data-toggle="modal" style="color:white;margin-top:10px;" type="button">SEND
+                                ENQUIRY</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-------------------------Modal----------------------->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade coi-pop" id="exampleModal" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Get Free Quotes</h5>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<form action="mail.php" method="POST" name="myFormpop" onsubmit="return validateFormpop()">
+<div class="form-group">
+<input class="form-control" id="Name" name="name" placeholder="Name" required="" type="text"/>
+</div>
+<div class="form-group">
+<input class="form-control" id="Email" name="email" placeholder="Email" required="" type="text"/>
+</div>
+<div class="form-group">
+<input class="form-control" id="Mobile No." name="phone" placeholder="Mobile No." required="" type="text"/>
+</div>
+<div class="form-group">
+<input class="form-control" id="Your City" name="city" placeholder="Your City" type="text"/>
+</div>
+<div class="form-group">
+<select class="form-control" id="exampleFormControlSelect1" name="destination" required="">
+<option value="">No. of Travellers</option>
+<option value="1-2">1-2</option>
+<option value="3-6">3-6</option>
+<option value="7-12">7-12</option>
+<option value="13-20">13-20</option>
+<option value="20 Above">20 Above</option>
+</select>
+</div>
+<button class="btn btn-enq" name="contact_submit" type="submit">Send Enquiry</button>
+</form>
+</div>
+</div>
+</div>
+<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/slick.min.js" type="text/javascript"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script type="text/javascript">
+            $(document).ready(function () {
+                $('#menu').slicknav();
+            });
+        </script>
+<script>
+            jQuery('.testimonials').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000000,
+                dots: true,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true,
+                        arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true,
+                        arrows: false,
+                    }
+                }
+                ]
+            });
+        </script>
+<script>
+            function validateForm() {
+
+
+                var digits = "0123456789";
+                // non-digit characters which are allowed in phone numbers
+                var phoneNumberDelimiters = "()- ";
+                // characters which are allowed in international phone numbers
+                // (a leading + is OK)
+                var validWorldPhoneChars = phoneNumberDelimiters + "+";
+                // Minimum no of digits in an international phone no.
+                var minDigitsInIPhoneNumber = 10;
+
+                function isInteger(s) {
+                    var i;
+                    for (i = 0; i < s.length; i++) {
+                        // Check that current character is number.
+                        var c = s.charAt(i);
+                        if (((c < "0") || (c > "9"))) return false;
+                    }
+                    // All characters are numbers.
+                    return true;
+                }
+
+                function trim(s) {
+                    var i;
+                    var returnString = "";
+                    // Search through string's characters one by one.
+                    // If character is not a whitespace, append to returnString.
+                    for (i = 0; i < s.length; i++) {
+                        // Check that current character isn't whitespace.
+                        var c = s.charAt(i);
+                        if (c != " ") returnString += c;
+                    }
+                    return returnString;
+                }
+
+                function stripCharsInBag(s, bag) {
+                    var i;
+                    var returnString = "";
+                    // Search through string's characters one by one.
+                    // If character is not in bag, append to returnString.
+                    for (i = 0; i < s.length; i++) {
+                        // Check that current character isn't whitespace.
+                        var c = s.charAt(i);
+                        if (bag.indexOf(c) == -1) returnString += c;
+                    }
+                    return returnString;
+                }
+
+                function checkInternationalPhone(strPhone) {
+                    var bracket = 3
+                    strPhone = trim(strPhone)
+                    if (strPhone.indexOf("+") > 1) return false
+                    if (strPhone.indexOf("-") != -1) bracket = bracket + 1
+                    if (strPhone.indexOf("(") != -1 && strPhone.indexOf("(") > bracket) return false
+                    var brchr = strPhone.indexOf("(")
+                    if (strPhone.indexOf("(") != -1 && strPhone.charAt(brchr + 2) != ")") return false
+                    if (strPhone.indexOf("(") == -1 && strPhone.indexOf(")") != -1) return false
+                    s = stripCharsInBag(strPhone, validWorldPhoneChars);
+                    return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+                }
+
+                var Name = document.myForm.name
+
+                if ((Name.value == null) || (Name.value == "")) {
+                    alert("Please Enter your Name")
+                    Name.focus()
+                    return false
+                }
+
+
+                var x = document.forms["myForm"]["email"].value;
+                if (x == "") {
+                    alert("Email must be filled out");
+                    document.myForm.email.focus();
+                    return false;
+                }
+                var atpos = x.indexOf("@");
+                var dotpos = x.lastIndexOf(".");
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+                    alert("Not a valid e-mail address");
+                    document.myForm.email.focus();
+                    return false;
+                }
+
+
+
+
+                var Phone = document.myForm.phone
+
+                if ((Phone.value == null) || (Phone.value == "")) {
+                    alert("Please Enter your Phone Number")
+                    Phone.focus()
+                    return false
+                }
+                if (checkInternationalPhone(Phone.value) == false) {
+                    alert("Please Enter a Valid Phone Number")
+
+                    Phone.focus()
+                    return false
+                }
+
+                var Name1 = document.myForm.city
+
+                if ((Name1.value == null) || (Name1.value == "")) {
+                    alert("Please Enter your city")
+                    Name1.focus()
+                    return false
+                }
+                if (document.myForm.destination.selectedIndex == 0) {
+                    alert("Please select your Destination");
+                    document.myForm.destination.focus();
+                    return false;
+                }
+
+                return true
+
+
+
+
+
+            }
+        </script>
+<script>
+            function validateFormpop() {
+
+
+                var digits = "0123456789";
+                // non-digit characters which are allowed in phone numbers
+                var phoneNumberDelimiters = "()- ";
+                // characters which are allowed in international phone numbers
+                // (a leading + is OK)
+                var validWorldPhoneChars = phoneNumberDelimiters + "+";
+                // Minimum no of digits in an international phone no.
+                var minDigitsInIPhoneNumber = 10;
+
+                function isInteger(s) {
+                    var i;
+                    for (i = 0; i < s.length; i++) {
+                        // Check that current character is number.
+                        var c = s.charAt(i);
+                        if (((c < "0") || (c > "9"))) return false;
+                    }
+                    // All characters are numbers.
+                    return true;
+                }
+
+                function trim(s) {
+                    var i;
+                    var returnString = "";
+                    // Search through string's characters one by one.
+                    // If character is not a whitespace, append to returnString.
+                    for (i = 0; i < s.length; i++) {
+                        // Check that current character isn't whitespace.
+                        var c = s.charAt(i);
+                        if (c != " ") returnString += c;
+                    }
+                    return returnString;
+                }
+
+                function stripCharsInBag(s, bag) {
+                    var i;
+                    var returnString = "";
+                    // Search through string's characters one by one.
+                    // If character is not in bag, append to returnString.
+                    for (i = 0; i < s.length; i++) {
+                        // Check that current character isn't whitespace.
+                        var c = s.charAt(i);
+                        if (bag.indexOf(c) == -1) returnString += c;
+                    }
+                    return returnString;
+                }
+
+                function checkInternationalPhone(strPhone) {
+                    var bracket = 3
+                    strPhone = trim(strPhone)
+                    if (strPhone.indexOf("+") > 1) return false
+                    if (strPhone.indexOf("-") != -1) bracket = bracket + 1
+                    if (strPhone.indexOf("(") != -1 && strPhone.indexOf("(") > bracket) return false
+                    var brchr = strPhone.indexOf("(")
+                    if (strPhone.indexOf("(") != -1 && strPhone.charAt(brchr + 2) != ")") return false
+                    if (strPhone.indexOf("(") == -1 && strPhone.indexOf(")") != -1) return false
+                    s = stripCharsInBag(strPhone, validWorldPhoneChars);
+                    return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+                }
+
+                var Name = document.myFormpop.name
+
+                if ((Name.value == null) || (Name.value == "")) {
+                    alert("Please Enter your Name")
+                    Name.focus()
+                    return false
+                }
+
+
+                var x = document.forms["myFormpop"]["email"].value;
+                if (x == "") {
+                    alert("Email must be filled out");
+                    document.myFormpop.email.focus();
+                    return false;
+                }
+                var atpos = x.indexOf("@");
+                var dotpos = x.lastIndexOf(".");
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+                    alert("Not a valid e-mail address");
+                    document.myFormpop.email.focus();
+                    return false;
+                }
+
+
+
+
+                var Phone = document.myFormpop.phone
+
+                if ((Phone.value == null) || (Phone.value == "")) {
+                    alert("Please Enter your Phone Number")
+                    Phone.focus()
+                    return false
+                }
+                if (checkInternationalPhone(Phone.value) == false) {
+                    alert("Please Enter a Valid Phone Number")
+
+                    Phone.focus()
+                    return false
+                }
+
+                var Name1 = document.myFormpop.city
+
+                if ((Name1.value == null) || (Name1.value == "")) {
+                    alert("Please Enter your city")
+                    Name1.focus()
+                    return false
+                }
+                if (document.myFormpop.destination.selectedIndex == 0) {
+                    alert("Please select your Destination");
+                    document.myFormpop.destination.focus();
+                    return false;
+                }
+
+                return true
+
+
+
+
+
+            }
+        </script>
+<script>
+            /**
+             * =======================================
+             * NAVIGATION SCROLL
+             * =======================================
+             */
+
+            // Select all links with hashes
+            jQuery('a[href*="#"]')
+                // Remove links that don't actually link to anything
+                .not('[href="#"]')
+                .not('[href="#0"]')
+                .click(function (event) {
+                    // On-page links
+                    if (
+                        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                        location.hostname == this.hostname
+                    ) {
+                        // Figure out element to scroll to
+                        var target = jQuery(this.hash);
+                        target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
+                        // Does a scroll target exist?
+                        if (target.length) {
+                            // Only prevent default if animation is actually gonna happen
+                            event.preventDefault();
+                            jQuery('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 900, function () {
+                                // Callback after animation
+                                // Must change focus!
+                                var $target = $(target);
+                                $target.focus();
+                                if ($target.is(":focus")) { // Checking if the target was focused
+                                    return false;
+                                } else {
+                                    $target.attr('tabindex',
+                                        '-1'); // Adding tabindex for elements not focusable
+                                    $target.focus(); // Set focus again
+                                };
+                            });
+                        }
+                    }
+                });
+        </script>
+<script>
+            var sections = $('.tab--section'),
+                nav = $('.Sticky-typofloan-nav'),
+                nav_height = 90;
+
+            $(window).on('scroll', function () {
+                var cur_pos = $(this).scrollTop();
+
+                sections.each(function () {
+                    var top = $(this).offset().top - nav_height,
+                        bottom = top + $(this).outerHeight();
+
+                    if (cur_pos >= top && cur_pos <= bottom) {
+                        nav.find('.page-scroll').removeClass('active');
+                        sections.removeClass('active');
+
+                        $(this).addClass('active');
+                        nav.find('a.page-scroll[href="#' + $(this).attr('id') + '"]').addClass(
+                            'active');
+                    }
+                });
+            });
+
+            nav.find('.page-scroll').on('click', function () {
+                var $el = $(this),
+                    id = $el.attr('href');
+
+                $('html, body').animate({
+                    scrollTop: $(id).offset().top - nav_height
+                }, 400);
+
+                return false;
+            });
+        </script>
+<script type="text/javascript">
+            $(document).ready(function () {
+
+                $('#exampleModal').modal('show');
+
+            });
+        </script>
+</div></body>
+</html>

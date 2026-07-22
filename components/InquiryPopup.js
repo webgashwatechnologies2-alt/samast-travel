@@ -31,6 +31,7 @@ export default function InquiryPopup() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Auto trigger popup after 2 seconds on every page load / reload
   useEffect(() => {
@@ -114,12 +115,41 @@ export default function InquiryPopup() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      setIsSubmitted(true);
-      // Only after actual submission do we block the popup for this browser session.
-      sessionStorage.setItem('samast_inquiry_submitted', 'true');
+      setIsSubmitting(true);
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/info@samasttravel.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            Name: formData.name,
+            Email: formData.email || "Not Provided",
+            "Mobile Number": formData.phone,
+            Destination: formData.destination,
+            "Month of Travel": formData.travelMonth,
+            "No. of Travellers": formData.persons || "Not Specified",
+            _subject: "Samast Travel - Floating Inquiry Popup",
+            _captcha: "false"
+          })
+        });
+        if (response.ok) {
+          setIsSubmitted(true);
+          // Only after actual submission do we block the popup for this browser session.
+          sessionStorage.setItem('samast_inquiry_submitted', 'true');
+        } else {
+          alert("Something went wrong. Please try again or contact us directly.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error sending inquiry. Please check your internet connection.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -378,8 +408,8 @@ export default function InquiryPopup() {
                     </div>
 
                     <div className={styles.formFooter}>
-                      <button type="submit" className={styles.submitBtn}>
-                        <span>Request Custom Itinerary</span>
+                      <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                        <span>{isSubmitting ? 'Requesting...' : 'Request Custom Itinerary'}</span>
                         <Send size={15} className={styles.sendIcon} />
                       </button>
                       <p className={styles.privacyNote}>We value your privacy. 100% secure. No spam.</p>

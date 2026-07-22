@@ -10,13 +10,42 @@ import styles from './contact.module.css';
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@samasttravel.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Name: form.name,
+          Email: form.email || "Not Provided",
+          "Mobile Number": form.phone,
+          Subject: form.subject,
+          Message: form.message || "Not Provided",
+          _subject: "Samast Travel - Contact Enquiry",
+          _captcha: "false"
+        })
+      });
+      if (response.ok) {
+        setSent(true);
+        setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        alert("Something went wrong. Please try again or contact us directly.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error sending message. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -135,8 +164,8 @@ export default function ContactPage() {
                       <label htmlFor="message">Your Message (Optional)</label>
                       <textarea id="message" name="message" rows={5} placeholder="Tell us about your travel plans, preferred dates, budget, and anything else..." value={form.message} onChange={handleChange}  />
                     </div>
-                    <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                      <Send size={16} /> Send Message
+                    <button type="submit" className={`btn btn-primary ${styles.submitBtn}`} disabled={isSubmitting}>
+                      <Send size={16} /> {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>
                 )}
