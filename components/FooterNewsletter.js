@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './Footer.module.css';
 
 export default function FooterNewsletter() {
+  const router = useRouter();
   const [email, setEmail]   = useState('');
   const [done, setDone]     = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,6 +30,7 @@ export default function FooterNewsletter() {
         if (response.ok) {
           setDone(true);
           setEmail('');
+          router.push('/thank-you/');
         } else {
           alert("Something went wrong. Please try again.");
         }

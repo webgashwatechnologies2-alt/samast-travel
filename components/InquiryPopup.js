@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { X, Send, Calendar, MapPin, Users, Phone, Mail, CheckCircle, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
 import styles from './InquiryPopup.module.css';
@@ -20,6 +21,7 @@ const DESTINATIONS = [
 ];
 
 export default function InquiryPopup() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -141,6 +143,8 @@ export default function InquiryPopup() {
           setIsSubmitted(true);
           // Only after actual submission do we block the popup for this browser session.
           sessionStorage.setItem('samast_inquiry_submitted', 'true');
+          setIsOpen(false);
+          router.push('/thank-you/');
         } else {
           alert("Something went wrong. Please try again or contact us directly.");
         }

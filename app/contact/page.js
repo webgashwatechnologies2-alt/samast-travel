@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare, Navigatio
 import styles from './contact.module.css';
 
 export default function ContactPage() {
+  const router = useRouter();
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,6 +39,7 @@ export default function ContactPage() {
       if (response.ok) {
         setSent(true);
         setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+        router.push('/thank-you/');
       } else {
         alert("Something went wrong. Please try again or contact us directly.");
       }

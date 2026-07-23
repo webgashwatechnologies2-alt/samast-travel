@@ -151,7 +151,7 @@ export default function Navbar() {
 
             {/* CTA */}
             <div className={styles.navCta}>
-              <Link href="/signup" className="btn btn-primary">
+              <Link href="/contact" className="btn btn-primary">
                 Bookings
               </Link>
             </div>
@@ -233,7 +233,7 @@ export default function Navbar() {
               );
             })}
             <li>
-              <Link href="/signup" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+              <Link href="/contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
                 Bookings
               </Link>
             </li>

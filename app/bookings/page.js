@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Users, MapPin, Phone, Mail, CheckCircle, ArrowRight, Clock, Star } from 'lucide-react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { getPackageBySlug } from '@/data/packagesData';
 import styles from './bookings.module.css';
 
@@ -21,6 +21,7 @@ const packages = [
 
 function BookingsContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [form, setForm] = useState({ name: '', email: '', phone: '', destination: '', date: '', people: '1', message: '' });
   const [sent, setSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -70,6 +71,7 @@ function BookingsContent() {
       if (response.ok) {
         setSent(true);
         setForm({ name: '', email: '', phone: '', destination: '', date: '', people: '1', message: '' });
+        router.push('/thank-you/');
       } else {
         alert("Something went wrong. Please try again or contact us directly.");
       }

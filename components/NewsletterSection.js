@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Send, CheckCircle, Check } from 'lucide-react';
 import Image from 'next/image';
 import styles from './NewsletterSection.module.css';
 
 export default function NewsletterSection() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [agree, setAgree] = useState(true);
   const [submitted, setSubmitted] = useState(false);
@@ -31,6 +33,7 @@ export default function NewsletterSection() {
         if (response.ok) {
           setSubmitted(true);
           setEmail('');
+          router.push('/thank-you/');
         } else {
           alert("Something went wrong. Please try again.");
         }

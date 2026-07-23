@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Mountain, Heart, Users, User, Palmtree, Send, MapPin, Sparkles, Check, Phone, User2 } from 'lucide-react';
 import styles from './TripPlannerSection.module.css';
 
@@ -15,6 +16,7 @@ const durations = ['3–5 Days', '6–8 Days', '9–12 Days', '13–18 Days', '1
 const budgets = ['₹10K–20K', '₹20K–35K', '₹35K–55K', '₹55K+'];
 
 export default function TripPlannerSection() {
+  const router = useRouter();
   const [selectedStyle, setSelectedStyle] = useState('');
   const [selectedDuration, setSelectedDuration] = useState('');
   const [selectedBudget, setSelectedBudget] = useState('');
@@ -55,6 +57,7 @@ export default function TripPlannerSection() {
         if (response.ok) {
           setSubmitted(true);
           setErrors({});
+          router.push('/thank-you/');
         } else {
           alert("Something went wrong. Please try again or contact us directly.");
         }
